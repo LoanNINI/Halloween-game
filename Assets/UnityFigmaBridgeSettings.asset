@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DocumentUrl: https://www.figma.com/design/WgqfDtjwpMNYpPXWku4kOM/Halloween-project?t=yd1S7wmquoMOeT7B-0
   BuildPrototypeFlow: 1
-  RunTimeAssetsScenePath: Assets/Scenes/SampleScene.unity
+  RunTimeAssetsScenePath: Assets/Scenes/Manu Scene.unity
   EnableAutoLayout: 0
   ScreenBindingNamespace: 
   ServerRenderImageScale: 3
-  EnableGoogleFontsDownloads: 1
-  CreateScreenNameCSharpFile: 0
+  EnableGoogleFontsDownloads: 0
+  CreateScreenNameCSharpFile: 1
   GenerateNodesMarkedForExport: 1
   OnlyImportSelectedPages: 1
   PageDataList:
