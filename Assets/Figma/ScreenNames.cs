@@ -7,6 +7,7 @@ public class FigmaScreenNames {
           
 	public const string MAIN_SCENCE="Main Scence";
 	public const string BUTTON_TEST="button test";
+	public const string SETTING="Setting";
 	public const string TUTORIAL_SCENCE="Tutorial Scence";
 	public const string TUTORIAL_SCENCE_1="Tutorial Scence_1";
 
