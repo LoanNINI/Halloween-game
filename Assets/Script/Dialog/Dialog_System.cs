@@ -9,11 +9,18 @@ public class Dialog_System : MonoBehaviour
     public GameObject Dialog_PosDeploy;
 
     TextMeshProUGUI textComponent;
-    public Dialog[] Dialog;
+    public Dialog[] Dialog_Start;
     public float textspeed;
 
     private int index;
 
+
+    Dialog[] Dialog;
+
+    Button Option1_Buttom;
+    Button Option2_Buttom;
+    TextMeshProUGUI Option1_Text;
+    TextMeshProUGUI Option2_Text;
 
     string old_name;
     bool Chooseing = false;
@@ -29,6 +36,7 @@ public class Dialog_System : MonoBehaviour
         {
             if (TNP.trigger == true && Input.GetKeyDown(KeyCode.E) && TNP.Player_Char.GetComponent<Humanoid_Player>().Chating == false)  //Start Chating by press E
             {
+                Dialog = Dialog_Start;
                 TNP.Hidde_PopUp();
                 TNP.Player_Char.GetComponent<Humanoid_Player>().Chating = true;
                 TNP.Player_Char.GetComponent<Movement>().enabled = false;
@@ -62,7 +70,7 @@ public class Dialog_System : MonoBehaviour
                         else
                         {
                             ContinueDialogue_Npc();
-                            old_name = Dialog[index + 1].name;
+                            old_name = Dialog[index].name;
                         }
                     }
                     else
@@ -82,7 +90,79 @@ public class Dialog_System : MonoBehaviour
                 }
             }
         }
+
+        if (obj_Dialog != null)
+        {
+            if (Chooseing == true)
+            {
+                obj_Dialog.transform.GetChild(1).gameObject.SetActive(true);
+                
+                Option1_Buttom = obj_Dialog.transform.GetChild(1).transform.GetChild(0).GetComponent<Button>();
+                Option2_Buttom = obj_Dialog.transform.GetChild(1).transform.GetChild(1).GetComponent<Button>();
+                Option1_Text = obj_Dialog.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                Option2_Text = obj_Dialog.transform.GetChild(1).transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+                Option1_Text.text = Dialog[index].choose_Option.Option1;
+                Option1_Buttom.onClick.AddListener(OnCLik_Option1);
+
+                Option2_Text.text = Dialog[index].choose_Option.Option2;
+                Option2_Buttom.onClick.AddListener(OnCLik_Option2);
+
+            }
+            else
+            {
+                Option1_Buttom = null;
+                Option2_Buttom = null;
+                Option1_Text = null;
+                Option2_Text = null;
+                obj_Dialog.transform.GetChild(1).gameObject.SetActive(false);
+            }
+        }
+    
     }
+
+
+    bool db_Click = false;
+    void OnCLik_Option1 ()
+    {
+        if (db_Click == false)
+        {
+            Chooseing = false;
+            StartCoroutine(OnClick_B1());
+        }
+    }
+    void OnCLik_Option2 ()
+    {
+        if (db_Click == false)
+        {
+            Chooseing = false;
+            StartCoroutine(OnClick_B2());
+        }
+    }
+    IEnumerator OnClick_B1()
+    {   
+        Debug.Log("Click! B1");
+        db_Click = true;
+        Dialog = Dialog[index].choose_Option.lines1;
+        StartDialogue_Npc();
+        yield return new WaitForSeconds(.05f);
+        db_Click = false;
+        Debug.Log("Click! B1 End");
+    }
+    IEnumerator OnClick_B2()
+    {   
+        Debug.Log("Click! B2");
+        db_Click = true;
+        Dialog = Dialog[index].choose_Option.lines2;
+        StartDialogue_Npc();
+        yield return new WaitForSeconds(.05f);
+        db_Click = false;
+        Debug.Log("Click! B2 End");
+    }
+
+
+
+
 
 
     void StartDialogue_Npc ()
@@ -177,5 +257,14 @@ public class Dialog_System : MonoBehaviour
             TNP.Player_Char.GetComponent<Movement>().enabled = true;
             Destroy(obj_Dialog);
         }
+    }
+
+
+
+
+
+    void Option_Set ()
+    {
+        
     }
 }
