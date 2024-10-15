@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 8927900f8af694542b7e18fb10088e1b
+guid: 5fe00695ffd109c4b929186bfdacaed7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4229010385964861292
-    second: 201f67ec1a1b7d231487c9bc5f7f5dc1d7b9b7ca_0
+      213: 3102770172313831575
+    second: boder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 201f67ec1a1b7d231487c9bc5f7f5dc1d7b9b7ca_0
+      name: boder_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 833
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c678fde2a8670ba30800000000000000
-      internalID: 4229010385964861292
+      spriteID: 798817458014f0b20800000000000000
+      internalID: 3102770172313831575
       vertices: []
       indices: 
       edges: []
@@ -138,15 +138,14 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fd1ad6023beb9764ca675e45dc67badd
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      201f67ec1a1b7d231487c9bc5f7f5dc1d7b9b7ca_0: 4229010385964861292
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
