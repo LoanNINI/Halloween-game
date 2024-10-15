@@ -10,6 +10,5 @@ public class FigmaScreenNames {
 	public const string SLIDER_TEST="slider test";
 	public const string SETTING="Setting";
 	public const string TUTORIAL_SCENCE="Tutorial Scence";
-	public const string TUTORIAL_SCENCE_1="Tutorial Scence_1";
 
 }
