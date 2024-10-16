@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Open_setting_popup : MonoBehaviour
+public class VolumeSetting : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
