@@ -11,6 +11,7 @@ public class Humanoid_Player : MonoBehaviour
     public bool State_Game = false;
     [Space(15)]
     public bool Chating = false;
+    public bool Hidding = false;
 
 
     void Start()

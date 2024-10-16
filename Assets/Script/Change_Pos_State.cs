@@ -3,6 +3,7 @@ using UnityEngine;
 public class Change_Pos_State : MonoBehaviour
 {
     public GameObject PosToGO;
+    public GameObject Ui_Interact;
     public bool Change_State = false;
 
     GameObject playerCharacter;
@@ -12,6 +13,7 @@ public class Change_Pos_State : MonoBehaviour
         if (col.transform.tag == "Player")
         {
             playerCharacter = col.gameObject;
+            Ui_Interact.SetActive(true);
             Trigger = true;
         }
     }
@@ -19,6 +21,7 @@ public class Change_Pos_State : MonoBehaviour
     {
         if (col.transform.tag == "Player")
         {
+            Ui_Interact.SetActive(false);
             playerCharacter = null;
             Trigger = false;
         }
