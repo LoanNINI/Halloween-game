@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 7047128159892232876}
   - component: {fileID: 1009254114198162567}
   - component: {fileID: 9073485225645567047}
+  - component: {fileID: 3415592141917073258}
+  - component: {fileID: 6266194040757792798}
   - component: {fileID: 954231636016698773}
   - component: {fileID: 6877541002192836167}
   m_Layer: 10
@@ -134,6 +136,33 @@ CapsuleCollider2D:
   m_Offset: {x: -0.015592158, y: -0.08107942}
   m_Size: {x: 0.855502, y: 1.511424}
   m_Direction: 0
+--- !u!114 &3415592141917073258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228755017361714145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18e4244b8eaf9b42b651ea8a791fe0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key_1: 0
+--- !u!114 &6266194040757792798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228755017361714145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679cd4dbc9b3a64429da93dccf1f2749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lighting: {fileID: 3287858586539582266}
+  Oil: 100
 --- !u!114 &954231636016698773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,8 +179,9 @@ MonoBehaviour:
   Character: {fileID: 5038663820033950784}
   MainCamera: {fileID: 0}
   MainCameraVirtual: {fileID: 0}
-  State_Game: 1
+  State_Game: 0
   Chating: 0
+  Hidding: 0
 --- !u!114 &6877541002192836167
 MonoBehaviour:
   m_ObjectHideFlags: 0
