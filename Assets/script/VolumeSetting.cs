@@ -1,16 +1,17 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class VolumeSetting : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioMixer myMixer;
+    [SerializeField] private Slider musicSlider;
 
-    // Update is called once per frame
-    void Update()
+    public void SetMusicVolume()
     {
-        
+        float volume = musicSlider.value;
+        myMixer.SetFloat("music", volume);
     }
+    
 }
