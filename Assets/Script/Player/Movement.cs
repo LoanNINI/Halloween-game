@@ -25,8 +25,8 @@ public class Movement : MonoBehaviour
         {
             direction_move.y = Input.GetAxisRaw("Vertical");
         }
-
-        Debug.Log(direction_move.x);
+        
+        //Debug.Log(direction_move.x);
         if (direction_move.x > 0 && !Facing)
         {   
             flip_faceing();

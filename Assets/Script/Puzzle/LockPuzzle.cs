@@ -12,6 +12,9 @@ public class LockPuzzle : MonoBehaviour
     public RectTransform PosL2;
     public RectTransform PosL3;
     public RectTransform PosLockPick;
+    public RectTransform Lock1_UI;
+    public RectTransform Lock2_UI;
+    public RectTransform Lock3_UI;
     [Space(15)]
     public bool Lock1;
     public int Lock1_Fix_Max;
@@ -25,6 +28,10 @@ public class LockPuzzle : MonoBehaviour
     [Space(15)]
     public int LockPick_in = 1;
     public int LockPick_force = 0;
+    [Space(25)]
+    public int Length = 10;
+    public GameObject finishedObj;
+
 
     GameObject playerCharacter;
     bool Trigger = false;
@@ -51,13 +58,13 @@ public class LockPuzzle : MonoBehaviour
 
     void Start ()
     {
-        Lock1_Fix_Max = Random.Range(20,100);
-        Lock2_Fix_Max = Random.Range(20,100);
-        Lock3_Fix_Max = Random.Range(20,100);
+        Lock1_Fix_Max = Random.Range(Length,100);
+        Lock2_Fix_Max = Random.Range(Length,100);
+        Lock3_Fix_Max = Random.Range(Length,100);
 
-        Lock1_Fix_Min = Lock1_Fix_Max - 20;
-        Lock2_Fix_Min = Lock2_Fix_Max - 20;
-        Lock3_Fix_Min = Lock3_Fix_Max - 20;
+        Lock1_Fix_Min = Lock1_Fix_Max - Length;
+        Lock2_Fix_Min = Lock2_Fix_Max - Length;
+        Lock3_Fix_Min = Lock3_Fix_Max - Length;
     }
     void Update ()
     {
@@ -96,6 +103,21 @@ public class LockPuzzle : MonoBehaviour
             {
                 PosLockPick.position = PosL3.position;
             }
+
+
+            if (Lock1 == true && Lock2 == true && Lock3 == true)
+            {
+                LockPicking = false;
+                Ui_Interact.SetActive(false);
+                Ui_Puzzle.SetActive(false);
+                Trigger = false;
+                playerCharacter.GetComponent<Movement>().enabled = true;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                playerCharacter = null;
+                finishedObj.SetActive(true);
+                gameObject.SetActive(false);
+                
+            }
         }
     }
 
@@ -119,6 +141,25 @@ public class LockPuzzle : MonoBehaviour
         }
     }
 
+    void PickLocked()
+    {
+        if (Lock1 == false && LockPick_in == 1 && LockPick_force <= Lock1_Fix_Max && LockPick_force >= Lock1_Fix_Min)
+        {
+            Lock1_UI.position = new Vector3(Lock1_UI.position.x,Lock1_UI.position.y + 30,Lock1_UI.position.z);
+            Lock1 = true;
+        }
+        if (Lock2 == false && LockPick_in == 2 && LockPick_force <= Lock2_Fix_Max && LockPick_force >= Lock2_Fix_Min)
+        {
+            Lock2_UI.position = new Vector3(Lock2_UI.position.x,Lock2_UI.position.y + 30,Lock2_UI.position.z);
+            Lock2 = true;
+        }
+        if (Lock3 == false && LockPick_in == 3 && LockPick_force <= Lock3_Fix_Max && LockPick_force >= Lock3_Fix_Min)
+        {
+            Lock3_UI.position = new Vector3(Lock3_UI.position.x,Lock3_UI.position.y + 30,Lock3_UI.position.z);
+            Lock3 = true;
+        }
+    }
+
 
     bool Maxed = false;
     bool Dbcreased = false;
@@ -130,6 +171,7 @@ public class LockPuzzle : MonoBehaviour
             pressed = true;
         }else if (Input.GetMouseButtonUp(0))
         {
+            PickLocked();
             pressed = false;
             LockPick_force = 0;
         }
