@@ -1,20 +1,18 @@
 using System;
-using System.Media;
 using UnityEngine;
 
-
-public class AudioMnanger : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public static AudioMnanger instance;
+    public static AudioManager Instance;
 
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -25,39 +23,33 @@ public class AudioMnanger : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic("Test");
-
+        PlayMusic("Test music");
     }
 
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicSounds, x => x.Name == name);
 
-        if (s != null)
+        if (s == null)  // Corrected condition to check if the sound is null
         {
-            Debug.Log("Sound Not Found");
+            Debug.LogError("Music sound not found: " + name);
+            return;
         }
 
-        else
-        {
-            musicSource.clip = s.clip;
-            musicSource.Play(); 
-
-        }
+        musicSource.clip = s.clip;
+        musicSource.Play();
     }
 
     public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.Name == name);
 
-        if (s != null)
+        if (s == null)  // Corrected condition to check if the sound is null
         {
-            Debug.Log("Sound Not Found");
+            Debug.LogError("SFX sound not found: " + name);
+            return;
         }
-        else
-        {
-            sfxSource.PlayOneShot(s.clip);
-        }
-    }
 
+        sfxSource.PlayOneShot(s.clip);
+    }
 }

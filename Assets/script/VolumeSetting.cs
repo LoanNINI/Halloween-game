@@ -7,11 +7,42 @@ public class VolumeSetting : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider SEXSlider;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+            SetMusicVolume();
+            SetSFXVolume();
+        }
+    }
 
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
-        myMixer.SetFloat("music", volume);
+        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat("musicVolume",volume);
+    }
+
+    public void SetSFXVolume()
+    {
+        float volume = SEXSlider.value;
+        myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
+    }
+
+    private void LoadVolume()
+    {
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        SEXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+
+        SetMusicVolume() ;
+        SetSFXVolume(); 
     }
     
 }
