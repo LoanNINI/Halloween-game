@@ -25,7 +25,7 @@ public class Monster_WayPoint : MonoBehaviour
         {
             Randoming = true;   
             ran_ = Random.Range(0,Room_WayPoint[Room_Id_Living].waypoint_inroom.Length);
-            Debug.Log(ran_);
+            //Debug.Log(ran_);
         }
         else if (Walking == false && Randoming == true)
         {
@@ -49,7 +49,7 @@ public class Monster_WayPoint : MonoBehaviour
     void Walk()
     {
         transform.position = Vector3.MoveTowards(transform.position, Room_WayPoint[Room_Id_Living].waypoint_inroom[ran_].Point.transform.position, Speed * Time.deltaTime);
-        Debug.Log("Walk_Looping");
+        //Debug.Log("Walk_Looping");
     }
 
 }
