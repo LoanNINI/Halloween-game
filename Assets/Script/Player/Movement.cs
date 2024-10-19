@@ -3,6 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb; 
+    public AudioSource SoundWalk;
     public float Speed = 5;
 
     Vector2 direction_move;
@@ -35,7 +36,6 @@ public class Movement : MonoBehaviour
         {
             flip_faceing();
         }
-
     }
 
     void flip_faceing ()
@@ -43,11 +43,22 @@ public class Movement : MonoBehaviour
         Facing = !Facing;
         gameObject.GetComponent<Humanoid_Player>().Character.transform.Rotate(0,180,0);
     }
-
+    bool playing = false;
     void FixedUpdate ()
     {
         Vector2 Movement = direction_move.normalized;
         rb.MovePosition(rb.position + Movement * Speed * Time.deltaTime);
+
+        Debug.Log(direction_move.magnitude);
+        if (direction_move.magnitude > 0 && playing == false)
+        {
+            playing = true;
+            SoundWalk.Play();
+        }else if (direction_move.magnitude == 0 && playing == true)
+        {
+            playing = false;
+            SoundWalk.Stop();
+        }
     }
 
 

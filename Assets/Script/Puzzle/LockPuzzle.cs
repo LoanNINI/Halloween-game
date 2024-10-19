@@ -147,16 +147,19 @@ public class LockPuzzle : MonoBehaviour
         {
             Lock1_UI.position = new Vector3(Lock1_UI.position.x,Lock1_UI.position.y + 30,Lock1_UI.position.z);
             Lock1 = true;
+            SoundAudioManager.soundAudioManager.Play_Sound("LockPick", 1);
         }
         if (Lock2 == false && LockPick_in == 2 && LockPick_force <= Lock2_Fix_Max && LockPick_force >= Lock2_Fix_Min)
         {
             Lock2_UI.position = new Vector3(Lock2_UI.position.x,Lock2_UI.position.y + 30,Lock2_UI.position.z);
             Lock2 = true;
+            SoundAudioManager.soundAudioManager.Play_Sound("LockPick", 1);
         }
         if (Lock3 == false && LockPick_in == 3 && LockPick_force <= Lock3_Fix_Max && LockPick_force >= Lock3_Fix_Min)
         {
             Lock3_UI.position = new Vector3(Lock3_UI.position.x,Lock3_UI.position.y + 30,Lock3_UI.position.z);
             Lock3 = true;
+            SoundAudioManager.soundAudioManager.Play_Sound("LockPick", 1);
         }
     }
 

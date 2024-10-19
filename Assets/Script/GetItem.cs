@@ -39,6 +39,12 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().key_1 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
             }
+            if (Id_Item == "CrowlBar")
+            {
+                Trigger = false;
+                playerCharacter.GetComponent<Inventory>().CrowlBar = true;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+            }
         }
     }
 }
