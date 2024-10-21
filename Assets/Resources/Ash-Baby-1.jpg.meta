@@ -145,7 +145,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ash-Baby-1_0: -5015844813113332227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

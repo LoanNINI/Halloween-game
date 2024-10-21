@@ -145,7 +145,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CrowlBar_0: -5464355720266126896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
