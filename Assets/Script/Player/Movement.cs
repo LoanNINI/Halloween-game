@@ -4,6 +4,7 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody2D rb; 
     public AudioSource SoundWalk;
+    public Animator animator;
     public float Speed = 5;
 
     Vector2 direction_move;
@@ -59,6 +60,8 @@ public class Movement : MonoBehaviour
             playing = false;
             SoundWalk.Stop();
         }
+
+        animator.SetFloat("Speed", direction_move.magnitude);
     }
 
 

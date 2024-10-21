@@ -1,4 +1,3 @@
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class GetItem : MonoBehaviour
@@ -37,12 +36,42 @@ public class GetItem : MonoBehaviour
                 Trigger = false;
                 playerCharacter.GetComponent<Inventory>().key_1 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
+                SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
             }
-            if (Id_Item == "CrowlBar")
+            if (Id_Item == "Key_2")
             {
                 Trigger = false;
-                playerCharacter.GetComponent<Inventory>().CrowlBar = true;
+                playerCharacter.GetComponent<Inventory>().key_2 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
+                SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+            }
+            if (Id_Item == "Basement_Key")
+            {
+                Trigger = false;
+                playerCharacter.GetComponent<Inventory>().Basement_Key = true;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+            }
+            if (Id_Item == "Candy")
+            {
+                Trigger = false;
+                playerCharacter.GetComponent<Inventory>().Candy += 6;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+            }
+            if (Id_Item == "GateKey_1")
+            {
+                Trigger = false;
+                playerCharacter.GetComponent<Inventory>().GateKey_1 = true;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+            }
+            if (Id_Item == "GateKey_2")
+            {
+                Trigger = false;
+                playerCharacter.GetComponent<Inventory>().GateKey_2 = true;
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
             }
         }
     }

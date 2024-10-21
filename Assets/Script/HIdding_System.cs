@@ -3,6 +3,7 @@ using UnityEngine;
 public class Hidding_System : MonoBehaviour
 {
     public GameObject player_Character;
+    public GameObject UI_Interact;
 
     public SpriteRenderer FrontDoor;
     public SpriteRenderer FrontDoorClose;
@@ -14,6 +15,7 @@ public class Hidding_System : MonoBehaviour
     {
         if (col.transform.tag == "Player")
         {
+            UI_Interact.SetActive(true);
             player_Character = col.gameObject;
             Trigger = true;
         }
@@ -22,6 +24,7 @@ public class Hidding_System : MonoBehaviour
     {
         if (col.transform.tag == "Player")
         {
+            UI_Interact.SetActive(false);
             player_Character = null;
             Trigger = false;
         }

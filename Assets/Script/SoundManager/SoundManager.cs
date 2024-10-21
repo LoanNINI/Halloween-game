@@ -24,6 +24,7 @@ public class SoundAudioManager : MonoBehaviour
             {
                 GameObject obj = Instantiate(PefebSound, transform.position, Quaternion.identity);
                 obj.GetComponent<AudioSource>().resource = Sound_Manager[i].Sound_Id;
+                obj.GetComponent<AudioSource>().outputAudioMixerGroup = Sound_Manager[i].Mixer;
                 obj.GetComponent<AudioSource>().Play();
                 Destroy(obj,time);
             }
