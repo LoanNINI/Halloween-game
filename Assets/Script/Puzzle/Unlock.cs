@@ -40,6 +40,27 @@ public class Unlock : MonoBehaviour
                 {
                     if (playerCharacter.GetComponent<Inventory>().key_1 == true)
                     {
+                        SoundAudioManager.soundAudioManager.Play_Sound("LockPick", 1);
+                        Ui_Interact.SetActive(false);
+                        GoalObj.SetActive(true);
+                        gameObject.SetActive(false);
+                    }
+                }
+                if (ItemWant == "key_2")
+                {
+                    if (playerCharacter.GetComponent<Inventory>().key_2 == true)
+                    {
+                        SoundAudioManager.soundAudioManager.Play_Sound("LockPick", 1);
+                        Ui_Interact.SetActive(false);
+                        GoalObj.SetActive(true);
+                        gameObject.SetActive(false);
+                    }
+                }
+                if (ItemWant == "Basement_Key")
+                {
+                    if (playerCharacter.GetComponent<Inventory>().Basement_Key == true)
+                    {
+                        SoundAudioManager.soundAudioManager.Play_Sound("LockPick", 1);
                         Ui_Interact.SetActive(false);
                         GoalObj.SetActive(true);
                         gameObject.SetActive(false);

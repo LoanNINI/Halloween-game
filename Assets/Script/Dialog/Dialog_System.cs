@@ -39,7 +39,7 @@ public class Dialog_System : MonoBehaviour
                 Dialog = Dialog_Start;
                 TNP.Hidde_PopUp();
                 TNP.Player_Char.GetComponent<Humanoid_Player>().Chating = true;
-                TNP.Player_Char.GetComponent<Movement>().enabled = false;
+                //TNP.Player_Char.GetComponent<Movement>().enabled = false;
 
                 if (Dialog[index].name == "Player")
                 {
