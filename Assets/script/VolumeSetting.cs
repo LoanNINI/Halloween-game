@@ -12,12 +12,12 @@ public class VolumeSetting : MonoBehaviour
     {
         //if (PlayerPrefs.HasKey("musicVolume"))
         //{
-        //    LoadVolume();
+            LoadVolume();
         //}
         //else
         //{
-            SetMusicVolume();
-            SetSFXVolume();
+            //SetMusicVolume();
+            //SetSFXVolume();
         //}
     }
 

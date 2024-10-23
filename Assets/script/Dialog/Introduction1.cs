@@ -58,7 +58,7 @@ public class Introduction_2 : MonoBehaviour
             StartCoroutine(Typing());
         }else
         {
-            SceneManager.LoadScene("Manu Scene");
+            SceneManager.LoadScene("BossFight");
         }
     }
 }

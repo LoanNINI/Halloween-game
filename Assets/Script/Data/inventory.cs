@@ -18,14 +18,17 @@ public class Inventory : MonoBehaviour
     bool onewtime = false;
     void Update ()
     {
-        UI_Candy.text = Candy.ToString();
-
-        if (Candy >= 10 && onewtime == false)
+        if (UI_Candy != null)
         {
-            onewtime = true;
-            Objective_System.objective_System.textObjective = "ดูเหมือนจะได้เวลาละ ไปที่คฤหาสน์ดูดีกว่า";
-            SoundAudioManager.soundAudioManager.Play_Sound("Start",10);
-            CastleBarrier.SetActive(false);
+            UI_Candy.text = Candy.ToString();
+
+            if (Candy >= 10 && onewtime == false)
+            {
+                onewtime = true;
+                Objective_System.objective_System.textObjective = "ดูเหมือนจะได้เวลาละ ไปที่คฤหาสน์ดูดีกว่า";
+                SoundAudioManager.soundAudioManager.Play_Sound("Start",10);
+                CastleBarrier.SetActive(false);
+            }
         }
     }
 }

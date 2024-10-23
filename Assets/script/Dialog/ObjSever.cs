@@ -3,10 +3,15 @@ using UnityEngine;
 public class ObjSever : MonoBehaviour
 {
     public GameObject QuestMain;
-    public ObjSever objsever;
+    public GameObject NewItem;
+    public GameObject Restart;
+    public static ObjSever objsever;
 
     void Start()
     {
-        objsever
+        if (objsever == null)
+        {
+            objsever = gameObject.GetComponent<ObjSever>();
+        }
     }
 }

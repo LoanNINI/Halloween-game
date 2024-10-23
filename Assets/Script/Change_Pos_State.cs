@@ -40,6 +40,7 @@ public class Change_Pos_State : MonoBehaviour
                 {
                     playerCharacter.GetComponent<Humanoid_Player>().MainCameraVirtual.enabled = !playerCharacter.GetComponent<Humanoid_Player>().MainCameraVirtual.enabled;
                     playerCharacter.GetComponent<Humanoid_Player>().State_Game = !playerCharacter.GetComponent<Humanoid_Player>().State_Game;
+                    playerCharacter.GetComponent<Humanoid_Player>().FriendFollower = !playerCharacter.GetComponent<Humanoid_Player>().FriendFollower;
                 }
             }
         }
