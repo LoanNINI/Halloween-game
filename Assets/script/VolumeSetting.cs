@@ -38,7 +38,7 @@ public class VolumeSetting : MonoBehaviour
     {
         float volume = Mathf.Clamp(SFXSlider.value, 0.0001f, 1f);  // Clamp to avoid log(0)
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
-        //PlayerPrefs.SetFloat("SFXVolume", volume);
+        PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 
     private void LoadVolume()
