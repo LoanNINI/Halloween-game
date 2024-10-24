@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class GetItem : MonoBehaviour
@@ -37,6 +39,7 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().key_1 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+                StartCoroutine(Emit_NewItem("+ Room1Key"));
             }
             if (Id_Item == "Key_2")
             {
@@ -44,6 +47,7 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().key_2 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+                StartCoroutine(Emit_NewItem("+ Room2Key"));
             }
             if (Id_Item == "Basement_Key")
             {
@@ -51,6 +55,7 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().Basement_Key = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+                StartCoroutine(Emit_NewItem("+ BasementKey"));
             }
             if (Id_Item == "Candy")
             {
@@ -58,6 +63,7 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().Candy += 6;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+                StartCoroutine(Emit_NewItem("+ Candy"));
             }
             if (Id_Item == "GateKey_1")
             {
@@ -65,6 +71,7 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().GateKey_1 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+                StartCoroutine(Emit_NewItem("+ GateKey1"));
             }
             if (Id_Item == "GateKey_2")
             {
@@ -72,7 +79,16 @@ public class GetItem : MonoBehaviour
                 playerCharacter.GetComponent<Inventory>().GateKey_2 = true;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 SoundAudioManager.soundAudioManager.Play_Sound("GetItem",1);
+                StartCoroutine(Emit_NewItem("+ GateKey2"));
             }
         }
+    }
+
+    IEnumerator Emit_NewItem (string text_)
+    {   
+        ObjSever.objsever.NewItem.SetActive(true);
+        ObjSever.objsever.NewItem.GetComponent<TextMeshProUGUI>().text = text_;
+        yield return new WaitForSeconds(3);
+        ObjSever.objsever.NewItem.SetActive(false);
     }
 }

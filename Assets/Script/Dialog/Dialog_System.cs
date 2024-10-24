@@ -39,7 +39,8 @@ public class Dialog_System : MonoBehaviour
                 Dialog = Dialog_Start;
                 TNP.Hidde_PopUp();
                 TNP.Player_Char.GetComponent<Humanoid_Player>().Chating = true;
-                //TNP.Player_Char.GetComponent<Movement>().enabled = false;
+                TNP.Player_Char.GetComponent<Movement>().enabled = false;
+                ObjSever.objsever.QuestMain.SetActive(false);
 
                 if (Dialog[index].name == "Player")
                 {
@@ -228,6 +229,7 @@ public class Dialog_System : MonoBehaviour
             foreach (char c in Dialog[index].lines.ToCharArray())
             {
                 textComponent.text += c;
+                SoundAudioManager.soundAudioManager.Play_Sound("SoundText", 1);
                 yield return new WaitForSeconds(textspeed);
             }
         }
@@ -236,6 +238,7 @@ public class Dialog_System : MonoBehaviour
             foreach (char c in Dialog[index].lines.ToCharArray())
             {
                 textComponent.text += c;
+                SoundAudioManager.soundAudioManager.Play_Sound("SoundText", 1);
                 yield return new WaitForSeconds(textspeed);
             }
         }
@@ -255,6 +258,7 @@ public class Dialog_System : MonoBehaviour
             old_name = string.Empty;
             TNP.Player_Char.GetComponent<Humanoid_Player>().Chating = false;
             TNP.Player_Char.GetComponent<Movement>().enabled = true;
+            ObjSever.objsever.QuestMain.SetActive(true);
             Destroy(obj_Dialog);
         }
     }

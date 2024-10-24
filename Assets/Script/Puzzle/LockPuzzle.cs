@@ -64,6 +64,13 @@ public class LockPuzzle : MonoBehaviour
         Lock2_Fix_Min = Lock2_Fix_Max - Length;
         Lock3_Fix_Min = Lock3_Fix_Max - Length;
     }
+
+    public void StopLockpick ()
+    {
+        playerCharacter.GetComponent<Movement>().enabled = true;
+        Ui_Puzzle.SetActive(false);
+        LockPicking = false;
+    }
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -75,9 +82,7 @@ public class LockPuzzle : MonoBehaviour
                 LockPicking = true;
             }else if (LockPicking == true)
             {
-                playerCharacter.GetComponent<Movement>().enabled = true;
-                Ui_Puzzle.SetActive(false);
-                LockPicking = false;
+                StopLockpick ();
             }
         }
 

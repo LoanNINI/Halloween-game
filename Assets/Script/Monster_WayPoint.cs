@@ -13,7 +13,7 @@ public class Monster_WayPoint : MonoBehaviour
     int ran_ = 0;
     bool Randoming = false;
     bool Walking = false;
-    bool Db_CoolDown;
+    bool Db_CoolDown = false;
     void Start ()
     {
         RB = gameObject.GetComponent<Rigidbody2D>();
@@ -38,11 +38,19 @@ public class Monster_WayPoint : MonoBehaviour
 
 
 
-        if (transform.position == new Vector3(Room_WayPoint[Room_Id_Living].waypoint_inroom[ran_].Point.transform.position.x, Room_WayPoint[Room_Id_Living].waypoint_inroom[ran_].Point.transform.position.y, transform.position.z))
+        if (Db_CoolDown == false&&transform.position == new Vector3(Room_WayPoint[Room_Id_Living].waypoint_inroom[ran_].Point.transform.position.x, Room_WayPoint[Room_Id_Living].waypoint_inroom[ran_].Point.transform.position.y, transform.position.z))
         {
-            Randoming = false;
-            Walking = false;
+            Db_CoolDown = true;
+            StartCoroutine(CooldownDB());
         }
+    }
+
+    IEnumerator CooldownDB()
+    {
+        yield return new WaitForSeconds(1);
+        Db_CoolDown = false;
+        Randoming = false;
+        Walking = false;
     }
 
     void Walk()

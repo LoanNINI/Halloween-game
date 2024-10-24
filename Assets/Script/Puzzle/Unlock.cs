@@ -66,6 +66,10 @@ public class Unlock : MonoBehaviour
                         gameObject.SetActive(false);
                     }
                 }
+                else
+                {
+                    SoundAudioManager.soundAudioManager.Play_Sound("KnockDoor", 2.5f);
+                }
             }
         }
     }
