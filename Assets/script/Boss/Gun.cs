@@ -35,7 +35,7 @@ public class Gun : MonoBehaviour
         objbullet.transform.position = transform.position;
         objbullet.transform.rotation = transform.rotation;
         SoundAudioManager.soundAudioManager.Play_Sound("Fire", 4);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         Firing = false;
     }
 }
