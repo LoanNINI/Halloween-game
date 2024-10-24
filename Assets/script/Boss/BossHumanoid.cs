@@ -56,8 +56,8 @@ public class BossHumanoid : MonoBehaviour
             if (health <= 0 && Fadetwo == false)
             {
                 Fadetwo = true;
-                health = 250;
-                HealthUI.maxValue = 250;
+                health = 150;
+                HealthUI.maxValue = 150;
                 RageEffect.SetActive(true);
                 SoundAudioManager.soundAudioManager.Play_Sound("Roar", 3);
             }

@@ -210,14 +210,14 @@ public class LockPuzzle : MonoBehaviour
     IEnumerator increased ()
     {   
         Dbcreased = true;
-        LockPick_force += 1;
+        LockPick_force += 2;
         yield return new WaitForSeconds(.001f);
         Dbcreased = false;
     }
     IEnumerator Decreased ()
     {   
         Dbcreased = true;
-        LockPick_force -= 1;
+        LockPick_force -= 2;
         yield return new WaitForSeconds(.001f);
         Dbcreased = false;
     }
