@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119c1bd3601648f28a252a6030e067b6, type: 3}
   m_Name: UnityFigmaBridgeSettings
   m_EditorClassIdentifier: 
-  DocumentUrl: https://www.figma.com/design/WgqfDtjwpMNYpPXWku4kOM/Halloween-project?node-id=0-1&node-type=canvas&t=CEx1n5BST3EGCROC-0
+  DocumentUrl: https://www.figma.com/design/WgqfDtjwpMNYpPXWku4kOM/Halloween-project?t=yd1S7wmquoMOeT7B-0
   BuildPrototypeFlow: 1
-  RunTimeAssetsScenePath: Assets/Scenes/Manu Scene Bug.unity
-  EnableAutoLayout: 1
+  RunTimeAssetsScenePath: Assets/Scenes/Manu Scene.unity
+  EnableAutoLayout: 0
   ScreenBindingNamespace: 
   ServerRenderImageScale: 3
-  EnableGoogleFontsDownloads: 1
+  EnableGoogleFontsDownloads: 0
   CreateScreenNameCSharpFile: 1
   GenerateNodesMarkedForExport: 1
   OnlyImportSelectedPages: 1
