@@ -278,7 +278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438051014}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50d3ffa1e4491e044bf96eae47541487, type: 3}
   m_Name: 
@@ -286,7 +286,7 @@ MonoBehaviour:
   selectedObject: {fileID: 1790791807}
   startPosition: {x: 1001.044, y: -920, z: 0}
   targetPosition: {x: 1001.044, y: 530, z: 0}
-  moveSpeed: 1500
+  moveSpeed: 3000
   bounceButton: {fileID: 438051016}
 --- !u!1 &539710469
 GameObject:
@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636564586562791666, guid: ed5ae4669281f1143a9428c0fe96cfe4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -392.5359
       objectReference: {fileID: 0}
     - target: {fileID: 6666171638090268760, guid: ed5ae4669281f1143a9428c0fe96cfe4, type: 3}
       propertyPath: m_Name
@@ -631,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9125624440179814639, guid: ed5ae4669281f1143a9428c0fe96cfe4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -406.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1336,6 +1336,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1708269259651138260, guid: 790037d0ed050be4c8061dda0abda40a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1710857495152057236, guid: 790037d0ed050be4c8061dda0abda40a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1765,6 +1769,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2155415027026714733, guid: d24e04da80763444fa8e5b84582c1392, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -406.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3383110629525130434, guid: d24e04da80763444fa8e5b84582c1392, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1848,6 +1856,10 @@ PrefabInstance:
     - target: {fileID: 4092074135637013200, guid: d24e04da80763444fa8e5b84582c1392, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092074135637013200, guid: d24e04da80763444fa8e5b84582c1392, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -392.5359
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2325,7 +2337,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5257531473687079861, guid: 9773220ecd613bb49a4b17e4c7286f29, type: 3}
       insertIndex: 5
       addedObject: {fileID: 1682179889}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 557650960630503931, guid: 9773220ecd613bb49a4b17e4c7286f29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2004593460}
   m_SourcePrefab: {fileID: 100100000, guid: 9773220ecd613bb49a4b17e4c7286f29, type: 3}
 --- !u!224 &2004593454 stripped
 RectTransform:
@@ -2342,6 +2357,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 557650960630503931, guid: 9773220ecd613bb49a4b17e4c7286f29, type: 3}
   m_PrefabInstance: {fileID: 2004593453}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2004593460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004593456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d3ffa1e4491e044bf96eae47541487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedObject: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  moveSpeed: 2
+  bounceButton: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class BounceOnButton : MonoBehaviour
 {
-    public GameObject selectedObject;      // GameObject ∑’Ë®–‡§≈◊ËÕπ‰À«
-    public Vector3 startPosition;          // µ”·ÀπËß‡√‘Ë¡µÈπ
-    public Vector3 targetPosition;         // µ”·ÀπËßª≈“¬∑“ß
-    public float moveSpeed = 2f;           // §«“¡‡√Á«„π°“√‡§≈◊ËÕπ‰À«
-    private bool isMovingUp = false;       // µ√«® Õ∫«Ë“°”≈—ß¢¬—∫¢÷ÈπÀ√◊Õ‰¡Ë
-    private bool isReturning = false;      // µ√«® Õ∫«Ë“°”≈—ß°≈—∫≈ß¡“µ”·ÀπËß‡√‘Ë¡µÈπÀ√◊Õ‰¡Ë
+    public GameObject selectedObject;      // GameObject ‡∏ó‡∏µ‡πà‡∏à‡∏∞‡πÄ‡∏Ñ‡∏•‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏´‡∏ß
+    public Vector3 startPosition;          // ‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô
+    public Vector3 targetPosition;         // ‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡∏õ‡∏•‡∏≤‡∏¢‡∏ó‡∏≤‡∏á
+    public float moveSpeed = 2f;           // ‡∏Ñ‡∏ß‡∏≤‡∏°‡πÄ‡∏£‡πá‡∏ß‡πÉ‡∏ô‡∏Å‡∏≤‡∏£‡πÄ‡∏Ñ‡∏•‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏´‡∏ß
+    private bool isMovingUp = false;       // ‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏ß‡πà‡∏≤‡∏Å‡∏≥‡∏•‡∏±‡∏á‡∏Ç‡∏¢‡∏±‡∏ö‡∏Ç‡∏∂‡πâ‡∏ô‡∏´‡∏£‡∏∑‡∏≠‡πÑ‡∏°‡πà
+    private bool isReturning = false;      // ‡∏ï‡∏£‡∏ß‡∏à‡∏™‡∏≠‡∏ö‡∏ß‡πà‡∏≤‡∏Å‡∏≥‡∏•‡∏±‡∏á‡∏Å‡∏•‡∏±‡∏ö‡∏•‡∏á‡∏°‡∏≤‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏´‡∏£‡∏∑‡∏≠‡πÑ‡∏°‡πà
 
     public Button bounceButton;            // UI Button
 
@@ -16,32 +16,32 @@ public class BounceOnButton : MonoBehaviour
     {
         if (selectedObject != null)
         {
-            // °”Àπ¥µ”·ÀπËß‡√‘Ë¡µÈπ„ÀÈ‡∑Ë“°—∫µ”·ÀπËß‡√‘Ë¡µÈπ∑’Ë‡√“°”Àπ¥„π Unity Inspector
+            // ‡∏Å‡∏≥‡∏´‡∏ô‡∏î‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡πÉ‡∏´‡πâ‡πÄ‡∏ó‡πà‡∏≤‡∏Å‡∏±‡∏ö‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡∏ó‡∏µ‡πà‡πÄ‡∏£‡∏≤‡∏Å‡∏≥‡∏´‡∏ô‡∏î‡πÉ‡∏ô Unity Inspector
             selectedObject.transform.position = startPosition;
 
-            // ºŸ°ø—ß°Ï™—π BounceObject ‡¢È“°—∫ªÿË¡
+            // ‡∏ú‡∏π‡∏Å‡∏ü‡∏±‡∏á‡∏Å‡πå‡∏ä‡∏±‡∏ô BounceObject ‡πÄ‡∏Ç‡πâ‡∏≤‡∏Å‡∏±‡∏ö‡∏õ‡∏∏‡πà‡∏°
             bounceButton.onClick.AddListener(BounceObject);
         }
     }
 
-    // ø—ß°Ï™—π ”À√—∫‡√‘Ë¡°“√‡§≈◊ËÕπ‰À«‡¡◊ËÕ°¥ªÿË¡
+    // ‡∏ü‡∏±‡∏á‡∏Å‡πå‡∏ä‡∏±‡∏ô‡∏™‡∏≥‡∏´‡∏£‡∏±‡∏ö‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏Å‡∏≤‡∏£‡πÄ‡∏Ñ‡∏•‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏´‡∏ß‡πÄ‡∏°‡∏∑‡πà‡∏≠‡∏Å‡∏î‡∏õ‡∏∏‡πà‡∏°
     public void BounceObject()
     {
         if (!isMovingUp && !isReturning)
         {
-            isMovingUp = true;  // ‡√‘Ë¡¢¬—∫¢÷Èπ
+            isMovingUp = true;  // ‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏Ç‡∏¢‡∏±‡∏ö‡∏Ç‡∏∂‡πâ‡∏ô
         }
     }
 
     void Update()
     {
-        // ¢¬—∫¢÷Èπ‰ª∑’Ëµ”·ÀπËßª≈“¬∑“ß∑’Ë°”Àπ¥
+        // ‡∏Ç‡∏¢‡∏±‡∏ö‡∏Ç‡∏∂‡πâ‡∏ô‡πÑ‡∏õ‡∏ó‡∏µ‡πà‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡∏õ‡∏•‡∏≤‡∏¢‡∏ó‡∏≤‡∏á‡∏ó‡∏µ‡πà‡∏Å‡∏≥‡∏´‡∏ô‡∏î
         if (isMovingUp)
         {
-            selectedObject.transform.position = Vector3.MoveTowards(selectedObject.transform.position,
+            selectedObject.transform.position = Vector3.MoveTowards(selectedObject.transform.position, 
                 targetPosition, moveSpeed * Time.deltaTime);
 
-            // ‡¡◊ËÕ∂÷ßµ”·ÀπËßª≈“¬∑“ß„ÀÈ‡√‘Ë¡°≈—∫≈ß¡“
+            // ‡πÄ‡∏°‡∏∑‡πà‡∏≠‡∏ñ‡∏∂‡∏á‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡∏õ‡∏•‡∏≤‡∏¢‡∏ó‡∏≤‡∏á‡πÉ‡∏´‡πâ‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏Å‡∏•‡∏±‡∏ö‡∏•‡∏á‡∏°‡∏≤
             if (selectedObject.transform.position == targetPosition)
             {
                 isMovingUp = false;
@@ -49,13 +49,13 @@ public class BounceOnButton : MonoBehaviour
             }
         }
 
-        // °≈—∫¡“µ”·ÀπËß‡√‘Ë¡µÈπ
+        // ‡∏Å‡∏•‡∏±‡∏ö‡∏°‡∏≤‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô
         if (isReturning)
         {
-            selectedObject.transform.position = Vector3.MoveTowards(selectedObject.transform.position,
+            selectedObject.transform.position = Vector3.MoveTowards(selectedObject.transform.position, 
                 startPosition, moveSpeed * Time.deltaTime);
 
-            // ‡¡◊ËÕ°≈—∫∂÷ßµ”·ÀπËß‡√‘Ë¡µÈπ„ÀÈÀ¬ÿ¥°“√‡§≈◊ËÕπ‰À«
+            // ‡πÄ‡∏°‡∏∑‡πà‡∏≠‡∏Å‡∏•‡∏±‡∏ö‡∏ñ‡∏∂‡∏á‡∏ï‡∏≥‡πÅ‡∏´‡∏ô‡πà‡∏á‡πÄ‡∏£‡∏¥‡πà‡∏°‡∏ï‡πâ‡∏ô‡πÉ‡∏´‡πâ‡∏´‡∏¢‡∏∏‡∏î‡∏Å‡∏≤‡∏£‡πÄ‡∏Ñ‡∏•‡∏∑‡πà‡∏≠‡∏ô‡πÑ‡∏´‡∏ß
             if (selectedObject.transform.position == startPosition)
             {
                 isReturning = false;
