@@ -145,7 +145,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      coffin-Sheet_0: -3470962340082715441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

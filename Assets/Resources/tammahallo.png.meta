@@ -145,7 +145,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tammahallo_0: 4245724405379692990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

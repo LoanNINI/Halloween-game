@@ -13,12 +13,13 @@ public class Dialog_Event_Friend : MonoBehaviour
     public GameObject NPCunlock;
     public string newObjective = "เก็บ ลูกอมให้ครบ10อัน";
 
+    public GameObject PumpkinFriendPrefab;  // Add a reference for the Pumpkin Friend prefab
+
     TextMeshProUGUI textComponent;
     public Dialog[] Dialog_Start;
     public float textspeed;
 
     private int index;
-
 
     Dialog[] Dialog;
 
@@ -31,15 +32,17 @@ public class Dialog_Event_Friend : MonoBehaviour
     bool Chooseing = false;
     trigger_Npc TNP;
     GameObject obj_Dialog;
+
     void Start ()
     {
         TNP = gameObject.GetComponent<trigger_Npc>();
     }
+
     void Update ()
     {
         if (TNP.Player_Char != null && Chooseing == false)
         {
-            if (TNP.trigger == true && Input.GetKeyDown(KeyCode.E) && TNP.Player_Char.GetComponent<Humanoid_Player>().Chating == false)  //Start Chating by press E
+            if (TNP.trigger == true && Input.GetKeyDown(KeyCode.E) && TNP.Player_Char.GetComponent<Humanoid_Player>().Chating == false)
             {
                 Dialog = Dialog_Start;
                 TNP.Hidde_PopUp();
@@ -58,7 +61,7 @@ public class Dialog_Event_Friend : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonDown(0) && TNP.Player_Char.GetComponent<Humanoid_Player>().Chating == true)  //Start Chating by press E
+            if (Input.GetMouseButtonDown(0) && TNP.Player_Char.GetComponent<Humanoid_Player>().Chating == true)
             {
                 if (Dialog.Length != index + 1)
                 {
@@ -102,7 +105,7 @@ public class Dialog_Event_Friend : MonoBehaviour
             if (Chooseing == true)
             {
                 obj_Dialog.transform.GetChild(1).gameObject.SetActive(true);
-                
+
                 Option1_Buttom = obj_Dialog.transform.GetChild(1).transform.GetChild(0).GetComponent<Button>();
                 Option2_Buttom = obj_Dialog.transform.GetChild(1).transform.GetChild(1).GetComponent<Button>();
                 Option1_Text = obj_Dialog.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -124,9 +127,8 @@ public class Dialog_Event_Friend : MonoBehaviour
                 obj_Dialog.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-    
-    }
 
+    }
 
     bool db_Click = false;
     void OnCLik_Option1 ()
@@ -146,7 +148,7 @@ public class Dialog_Event_Friend : MonoBehaviour
         }
     }
     IEnumerator OnClick_B1()
-    {   
+    {
         Debug.Log("Click! B1");
         db_Click = true;
         Dialog = Dialog[index].choose_Option.lines1;
@@ -156,7 +158,7 @@ public class Dialog_Event_Friend : MonoBehaviour
         Debug.Log("Click! B1 End");
     }
     IEnumerator OnClick_B2()
-    {   
+    {
         Debug.Log("Click! B2");
         db_Click = true;
         Dialog = Dialog[index].choose_Option.lines2;
@@ -165,11 +167,6 @@ public class Dialog_Event_Friend : MonoBehaviour
         db_Click = false;
         Debug.Log("Click! B2 End");
     }
-
-
-
-
-
 
     void StartDialogue_Npc ()
     {
@@ -227,7 +224,7 @@ public class Dialog_Event_Friend : MonoBehaviour
     }
 
     IEnumerator Typeline()
-    {   
+    {
         if (Dialog[index].Choose == true)
         {
             Chooseing = true;
@@ -249,31 +246,39 @@ public class Dialog_Event_Friend : MonoBehaviour
         }
     }
 
-    void NextLine_Exit ()
+    void NextLine_Exit()
+{
+    if (index < Dialog.Length - 1)
     {
-        if (index < Dialog.Length - 1)
-        {
-            index++;
-            textComponent.text = string.Empty;
-            StartCoroutine(Typeline());
-        }
-        else
-        {   
-            index = 0;
-            old_name = string.Empty;
-            TNP.Player_Char.GetComponent<Humanoid_Player>().Chating = false;
-            TNP.Player_Char.GetComponent<Movement>().enabled = true;
-            TNP.Player_Char.GetComponent<Humanoid_Player>().FriendFollower = true;
-            Destroy(obj_Dialog);
-
-            AreaUnlock.SetActive(false);
-            NPCunlock.SetActive(true);
-            AreaUnlockTrickortreat.SetActive(true);
-            Objective_System.objective_System.textObjective = newObjective;
-            gameObject.transform.parent.gameObject.SetActive(false);
-            ObjSever.objsever.QuestMain.SetActive(true);
-            //gameObject.SetActive(false);
-
-        }
+        index++;
+        textComponent.text = string.Empty;
+        StartCoroutine(Typeline());
     }
+    else
+    {
+        index = 0;
+        old_name = string.Empty;
+        TNP.Player_Char.GetComponent<Humanoid_Player>().Chating = false;
+        TNP.Player_Char.GetComponent<Movement>().enabled = true;
+        TNP.Player_Char.GetComponent<Humanoid_Player>().FriendFollower = true;
+        Destroy(obj_Dialog);
+
+        AreaUnlock.SetActive(false);
+        NPCunlock.SetActive(true);
+        AreaUnlockTrickortreat.SetActive(true);
+        Objective_System.objective_System.textObjective = newObjective;
+        gameObject.transform.parent.gameObject.SetActive(false);
+        ObjSever.objsever.QuestMain.SetActive(true);
+
+        // Spawning the Pumpkin Friend at the Player's position
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Instantiate(PumpkinFriendPrefab, player.transform.position, Quaternion.identity);
+        }
+
+    }
+}
+
+
 }
