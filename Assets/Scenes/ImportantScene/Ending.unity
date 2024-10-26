@@ -255,7 +255,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &1504229887
+--- !u!1 &726734827
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,39 +263,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1504229890}
-  - component: {fileID: 1504229889}
-  - component: {fileID: 1504229888}
+  - component: {fileID: 726734830}
+  - component: {fileID: 726734829}
+  - component: {fileID: 726734828}
   m_Layer: 0
-  m_Name: "\u0E1E\u0E1A\u0E40\u0E08\u0E2D"
+  m_Name: found
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1504229888
+--- !u!114 &726734828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504229887}
+  m_GameObject: {fileID: 726734827}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b741ee636d2f4094884d4be895f4246c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 1504229889}
+  videoPlayer: {fileID: 726734829}
   sceneName: BossFight
---- !u!328 &1504229889
+--- !u!328 &726734829
 VideoPlayer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504229887}
+  m_GameObject: {fileID: 726734827}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 33fbbb75fdc8fbe428e5a2bd8a0d2548, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: a62873d37b31e3b46aacd6282dfbefb0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 640402806}
@@ -323,13 +323,13 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!4 &1504229890
+--- !u!4 &726734830
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504229887}
+  m_GameObject: {fileID: 726734827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -343,4 +343,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 640402807}
-  - {fileID: 1504229890}
+  - {fileID: 726734830}
