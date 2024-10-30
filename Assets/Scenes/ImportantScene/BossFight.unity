@@ -1154,12 +1154,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 638442723}
     m_Modifications:
     - target: {fileID: 954231636016698773, guid: ec97c5a7c6fc70248b93a4b6baf33413, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 954231636016698773, guid: ec97c5a7c6fc70248b93a4b6baf33413, type: 3}
       propertyPath: MainCameraVirtual
       value: 
       objectReference: {fileID: 632918694}
     - target: {fileID: 2228755017361714145, guid: ec97c5a7c6fc70248b93a4b6baf33413, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038663820033950784, guid: ec97c5a7c6fc70248b93a4b6baf33413, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587367509526490669, guid: ec97c5a7c6fc70248b93a4b6baf33413, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7047128159892232876, guid: ec97c5a7c6fc70248b93a4b6baf33413, type: 3}
       propertyPath: m_LocalPosition.x

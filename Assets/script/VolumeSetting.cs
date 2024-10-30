@@ -10,15 +10,15 @@ public class VolumeSetting : MonoBehaviour
 
     private void Start()
     {
-        //if (PlayerPrefs.HasKey("musicVolume"))
-        //{
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
             LoadVolume();
-        //}
-        //else
-        //{
-            //SetMusicVolume();
-            //SetSFXVolume();
-        //}
+        }
+        else
+        {
+            SetMusicVolume();
+            SetSFXVolume();
+        }
     }
 
     void Update ()
@@ -31,7 +31,7 @@ public class VolumeSetting : MonoBehaviour
     {
         float volume = Mathf.Clamp(musicSlider.value, 0.0001f, 1f);  // Clamp to avoid log(0)
         myMixer.SetFloat("music", Mathf.Log10(volume) * 20);
-        //PlayerPrefs.SetFloat("musicVolume", volume);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
     public void SetSFXVolume()
